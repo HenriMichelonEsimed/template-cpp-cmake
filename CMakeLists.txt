@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.29)
 
 # Nom du projet et de l'exécutable généré
-project(tp2)
+project(template_cpp_cmake)
 
 # Forcer l'utilisation de C++ 23
 set(CMAKE_CXX_STANDARD 23)
@@ -19,7 +19,7 @@ set(TESTS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
 #######################################################
 # Partie à mettre à jour manuellement
-# Liste des fichiers sources des exercices
+# Liste des fichiers sources des modules des exercices
 set(PROJECT_FILES
         ${SRC_DIR}/exo1.cppm
 )
