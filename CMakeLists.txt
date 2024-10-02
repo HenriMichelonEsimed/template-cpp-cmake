@@ -17,6 +17,9 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 # Répertoire contenant les sources des tests unitaires
 set(TESTS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
+# Pour "import std"
+include(cmake/std.cmake)
+
 #######################################################
 # Partie à mettre à jour manuellement
 # Liste des fichiers sources des modules des exercices
@@ -27,15 +30,15 @@ set(PROJECT_FILES
 set(TEST_FILES
         ${TESTS_DIR}/exo1.cpp
 )
+# Exécutable principal
+add_executable(${PROJECT_NAME}
+        ${SRC_DIR}/main.cpp
+)
 #######################################################
 
-# Pour "import std"
-include(cmake/std.cmake)
 # Pour les tests unitaires
 include(cmake/catch2.cmake)
 
-# Exécutable principal
-add_executable(${PROJECT_NAME} ${SRC_DIR}/main.cpp)
 target_sources(${PROJECT_NAME}
         PUBLIC
         FILE_SET CXX_MODULES
