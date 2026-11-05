@@ -18,6 +18,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 if(MSVC)
     set(USE_STATIC_MSVC_RUNTIME_LIBRARY OFF)
 endif()
+
+# Pour "import std"
+include(cmake/std.cmake)
 include(cmake/compile_options.cmake)
 
 # Répertoire contenant les sources des exercices
@@ -59,5 +62,3 @@ include(CTest)
 include(Catch)
 catch_discover_tests(tests)
 
-# Pour "import std"
-include(cmake/std.cmake)
